@@ -50,5 +50,10 @@ class Books {
         $stmt = $this->db->prepare($query);
         $stmt->bindParam(':id_buku', $id_buku);
         return $stmt->execute();
+
+        $query = "DELETE FROM id_penerbit WHERE id_penerbit = :id_penerbit";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':id_penerbit', $id_buku);
+        return $stmt->execute();
     }
 }
