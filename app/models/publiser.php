@@ -49,5 +49,10 @@ class Publiser {
         $stmt = $this->db->prepare($query);
         $stmt->bindParam(':id_penerbit', $id_penerbit);
         return $stmt->execute();
+
+        $queryBooks = "DELETE FROM books WHERE id_penerbit = :id_penerbit";
+        $stmtBooks = $this->db->prepare($queryBooks);
+        $stmtBooks->bindParam(':id_penerbit', $id_penerbit);
+        $stmtBooks->execute();
     }
 }
