@@ -20,22 +20,23 @@ class UserController {
     }
 
     public function store() {
-        $no= $_POST['no'];
-        $name = $_POST['name'];
+        $id_user = $_POST['id_user'];
+        $nomor_anggota= $_POST['nomor_anggota'];
+        $nama = $_POST['nama'];
         $email = $_POST['email'];
         $password = $_POST['password'];
-        $this->userModel->add($no,$name, $email,$password);
+        $this->userModel->add($id_user,$nomor_anggota, $nama, $email,$password);
         header('Location: /user/index');
     }
     // Show the edit form with the user data
-    public function edit($id) {
-        $user = $this->userModel->find($id); // Assume find() gets user by ID
+    public function edit($id_user) {
+        $user = $this->userModel->find($id_user); // Assume find() gets user by ID
         require_once __DIR__ . '/../views/user/edit.php';
     }
 
     // Process the update request
-    public function update($id, $data) {
-        $updated = $this->userModel->update($id, $data);
+    public function update($id_user, $data) {
+        $updated = $this->userModel->update($id_user, $data);
         if ($updated) {
             header("Location: /user/index"); // Redirect to user list
         } else {
@@ -44,8 +45,8 @@ class UserController {
     }
 
     // Process delete request
-    public function delete($id) {
-        $deleted = $this->userModel->delete($id);
+    public function delete($id_user) {
+        $deleted = $this->userModel->delete($id_user);
         if ($deleted) {
             header("Location: /user/index"); // Redirect to user list
         } else {

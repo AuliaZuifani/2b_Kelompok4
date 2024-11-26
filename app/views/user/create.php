@@ -2,10 +2,13 @@
 <h2>Tambah User</h2>
 <form action="/user/store" method="POST">
     <pre>
-    <label for="nomor">No.Anggota:</label>
-    <input type="text" name="no" id="no" required><br>
+    <label for="id_user">Id User:</label>
+    <input type="number" name="id_user" id="id_user" required><br>
 
-    <label for="name">Nama:</label>
+    <label for="nomor_anggota">No.Anggota:</label>
+    <input type="text" name="nomor_anggota" id="nomor_anggota" required><br>
+
+    <label for="nama">Nama:</label>
     <input type="text" name="nama" id="nama" required><br>
 
     <label for="email">Email:</label>
