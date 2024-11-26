@@ -9,7 +9,7 @@
 
 <body>
     <h2>Edit User</h2>
-    <form action="/user/update/<?php echo $user['id_user']; ?>" method="POST">
+    <form action="/users/update/<?php echo $user['id_user']; ?>" method="POST">
 <pre>
         <label for="nomor_anggota">No.Anggota:</label>
         <input type="text" name="nomor_anggota" value= "<?php echo $user['nomor_anggota'] ?>" required>
@@ -26,7 +26,7 @@
         <button type="submit">Update</button>
 </pre>
     </form>
-    <a href="/user/index">Back to List</a>
+    <a href="/users/index">Back to List</a>
 </body>
 
 </html>

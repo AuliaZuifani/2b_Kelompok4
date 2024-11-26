@@ -1,6 +1,6 @@
 <!-- app/views/user/create.php -->
 <h2>Tambah User</h2>
-<form action="/user/store" method="POST">
+<form action="/users/store" method="POST">
     <pre>
     <label for="id_user">Id User:</label>
     <input type="number" name="id_user" id="id_user" required><br>

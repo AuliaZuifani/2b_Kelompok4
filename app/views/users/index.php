@@ -89,7 +89,7 @@
 
 <body>
     <h2>Sistem Pengelolaan Perpustakaan Digital</h2>
-    <a href="/user/create" class="btn-user">Tambah Data User</a>
+    <a href="/users/create" class="btn-user">Tambah Data User</a>
 
     <ul>
 
@@ -112,8 +112,8 @@
                           <td> <?= htmlspecialchars($user['nama']) ?> </td>
                           <td>  <?= htmlspecialchars($user['email']) ?> </td>
                           <td>  <?= htmlspecialchars($user['password']) ?> </td>
-                          <td> <a href="/user/edit/<?php echo $user['id_user']; ?>">Edit</a> </td>
-                          <td> <a href="/user/delete/<?php echo $user['id_user']; ?>" onclick="return confirm('Are you sure?')">Delete</a></td>
+                          <td> <a href="/users/edit/<?php echo $user['id_user']; ?>">Edit</a> </td>
+                          <td> <a href="/users/delete/<?php echo $user['id_user']; ?>" onclick="return confirm('Are you sure?')">Delete</a></td>
                         </tr>
                 </p>
              </tbody>
