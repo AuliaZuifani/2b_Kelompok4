@@ -14,6 +14,11 @@ class Books {
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function getAllPenerbit() {
+        $query = $this->db->query("SELECT * FROM publishers");
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function find($id_buku) {
         $query = $this->db->prepare("SELECT * FROM books WHERE id_buku = :id_buku");
         $query->bindParam(':id_buku', $id_buku, PDO::PARAM_INT);
@@ -21,14 +26,13 @@ class Books {
         return $query->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function add($id_buku, $judul, $pengarang, $tahun, $genre, $id_penerbit) {
-        $query = $this->db->prepare("INSERT INTO books (id_buku, judul, pengarang, tahun, genre, id_penerbit) VALUES (:id_buku, :judul, :pengarang, :tahun, :genre, :id_penerbit)");
+    public function add($id_buku, $judul, $pengarang, $tahun, $genre) {
+        $query = $this->db->prepare("INSERT INTO books (id_buku, judul, pengarang, tahun, genre) VALUES (:id_buku, :judul, :pengarang, :tahun, :genre)");
         $query->bindParam(':id_buku', $id_buku);
         $query->bindParam(':judul', $judul);
         $query->bindParam(':pengarang', $pengarang);
         $query->bindParam(':tahun', $tahun);
         $query->bindParam(':genre', $genre);
-        $query->bindParam(':id_penerbit', $id_penerbit);
         return $query->execute();
     }
 
@@ -51,7 +55,7 @@ class Books {
         $stmt->bindParam(':id_buku', $id_buku);
         return $stmt->execute();
 
-        $query = "DELETE FROM id_penerbit WHERE id_penerbit = :id_penerbit";
+        $query = "DELETE FROM publishers WHERE id_penerbit = :id_penerbit";
         $stmt = $this->db->prepare($query);
         $stmt->bindParam(':id_penerbit', $id_buku);
         return $stmt->execute();

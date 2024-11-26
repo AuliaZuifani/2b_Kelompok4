@@ -16,9 +16,12 @@
     <label for="genre">Genre:</label><br>
     <input type="text" name="genre" id="genre" required><br>
 
-    <label for="id_penerbit">id penerbit:</label><br>
-    <input type="number" name="id_penerbit" id="id_penerbit" required><br>
-
+    <label for="genre">ID Penerbit:</label><br>
+    <select name="id_penerbit" id="id_penerbit">
+    <?php foreach ($penerbit as $p): ?>
+        <option value="<?php echo $p['id_penerbit']; ?>"><?php echo $p['id_penerbit'] ?></option>
+    <?php endforeach; ?>
+    </select><br>
 
     <button type="submit">Simpan</button>
 </form>

@@ -17,6 +17,7 @@ class BooksController {
     }
 
     public function create() {
+        $penerbit = $this->bookModel->getAllPenerbit();
         require_once '../app/views/books/create.php';
     }
 
@@ -26,8 +27,7 @@ class BooksController {
         $pengarang= $_POST['pengarang'];
         $tahun= $_POST['tahun'];
         $genre= $_POST['genre'];
-        $id_penerbit= $_POST['id_penerbit'];
-        $this->bookModel->add($id_buku, $judul, $pengarang, $tahun, $genre, $id_penerbit);
+        $this->bookModel->add($id_buku, $judul, $pengarang, $tahun, $genre);
         header('Location: /books/index');
     }
     // Show the edit form with the user data
@@ -44,7 +44,6 @@ class BooksController {
             'pengarang' => $_POST['pengarang'],
             'tahun' => $_POST['tahun'],
             'genre' => $_POST['genre'],
-            'id_penerbit' => $_POST['id_penerbit']
         ];
 
         $updated = $this->bookModel->update($id_buku, $data);
