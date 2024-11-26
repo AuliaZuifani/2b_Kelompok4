@@ -10,12 +10,12 @@ class PubliserController {
 
     public function index() {
         $publiser = $this->publiserModel->getAllPubliser();
-        require_once '../app/views/publiser/index.php';
+        require_once '../app/views/publishers/index.php';
 
     }
 
     public function create() {
-        require_once '../app/views/publiser/create.php';
+        require_once '../app/views/publiser/publiser/create.php';
     }
 
     public function store() {
@@ -29,7 +29,7 @@ class PubliserController {
     // Show the edit form with the publiser data
     public function edit($id) {
         $publiser = $this->publiserModel->find($id); // Assume find() gets publiser by ID
-        require_once __DIR__ . '/../views/publiser/edit.php';
+        require_once __DIR__ . '/../views/publishers/edit.php';
     }
 
     // Process the update request

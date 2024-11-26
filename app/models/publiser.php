@@ -45,10 +45,10 @@ class Publiser {
 
     // Delete user by ID
     public function delete($id_penerbit) {
-        $query = "DELETE FROM publishers WHERE id_penerbit = :id_penerbit";
-        $stmt = $this->db->prepare($query);
-        $stmt->bindParam(':id_penerbit', $id_penerbit);
-        return $stmt->execute();
+        $queryPublisher = "DELETE FROM publishers WHERE id_penerbit = :id_penerbit";
+        $stmtPublisher = $this->db->prepare($queryPublisher);
+        $stmtPublisher->bindParam(':id_penerbit', $id_penerbit);
+        return $stmtPublisher->execute();
 
         $queryBooks = "DELETE FROM books WHERE id_penerbit = :id_penerbit";
         $stmtBooks = $this->db->prepare($queryBooks);
