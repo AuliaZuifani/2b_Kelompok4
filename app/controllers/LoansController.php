@@ -16,13 +16,14 @@ class LoanController {
     }
 
     public function create() {
+        $books = $this->LoanModel->getAllBooks();
         require_once '../app/views/loans/create.php';
     }
 
     public function store() {
         $id_pinjam = $_POST['id_pinjam'];
         $id_buku = $_POST['id_buku'];
-        $buku = $_POST['buku'];
+        $buku = $_POST['buku_yang_dipinjam'];
         $peminjam = $_POST['peminjam'];
         $tanggal_pinjam = $_POST['tanggal_pinjam'];
         $tanggal_kembali = $_POST['tanggal_kembali'];
@@ -40,7 +41,7 @@ class LoanController {
     public function update($id_pinjam) {
         $data = [
             'id_buku' => $_POST['id_buku'],
-            'buku' => $_POST['buku'],
+            'buku_yang_dipinjam' => $_POST['buku_yang_dipinjam'],
             'peminjam' => $_POST['peminjam'],
             'tanggal_pinjam' => $_POST['tanggal_pinjam'],
             'tanggal_kembali' => $_POST['tanggal_kembali'],

@@ -3,7 +3,6 @@
 
 require_once 'app/controllers/LoansController.php';
 
-
 $controller = new LoanController();
 $url = $_SERVER['REQUEST_URI'];
 $requestMethod = $_SERVER['REQUEST_METHOD'];
@@ -16,13 +15,13 @@ if ($url == '/loans/index' || $url == '/') {
     $controller->store();
 } elseif (preg_match('/\/loans\/edit\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
     $userId = $matches[1];
-    $controller->edit($loanId);
+    $controller->edit($userId);
 } elseif (preg_match('/\/loans\/update\/(\d+)/', $url, $matches) && $requestMethod == 'POST') {
     $userId = $matches[1];
-    $controller->update($loanId, $_POST);
+    $controller->update($userId, $_POST);
 } elseif (preg_match('/\/loans\/delete\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
     $userId = $matches[1];
-    $controller->delete($loanId);
+    $controller->delete($userId);
 } else {
     http_response_code(404);
     echo "404 Not Found";

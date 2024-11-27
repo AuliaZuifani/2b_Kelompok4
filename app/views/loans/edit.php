@@ -12,8 +12,8 @@
         <input type="number" id="id_buku" name="id_buku" value="<?php echo htmlspecialchars($loan['id_buku']); ?>" required>
         <br>
 
-        <label for="buku">Buku yang Dipinjam:</label>
-        <input type="text" id="buku" name="buku" value="<?php echo htmlspecialchars($loan['buku']); ?>" required>
+        <label for="buku_yang_dipinjam">Buku yang Dipinjam:</label>
+        <input type="text" id="buku_yang_dipinjam" name="buku_yang_dipinjam" value="<?php echo htmlspecialchars($loan['buku_yang_dipinjam']); ?>" required>
         <br>
 
         <label for="peminjam">Nama Peminjam:</label>
