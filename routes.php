@@ -14,7 +14,7 @@ $url = $_SERVER['REQUEST_URI'];
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 
 if($url == '/users/index' || $url == '/') {
-    $controller->index();
+    $Usercontroller->index();
 } elseif ($url == '/users/create' && $requestMethod == 'GET') {
     $Usercontroller->create();
 } elseif ($url == '/users/store' && $requestMethod == 'POST') {
