@@ -17,7 +17,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th> No.Anggota </th>
+                        <th> Nomor Anggota </th>
                         <th> Nama </th>
                         <th> Email </th>
                         <th> Password </th>
