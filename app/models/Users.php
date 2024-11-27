@@ -21,9 +21,9 @@ class User {
         return $query->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function add($id_user, $nomor_anggota,$nama, $email,$password) {
-        $query = $this->db->prepare("INSERT INTO users (id_user, nomor_anggota, nama, email, password) VALUES (:id_user, :nomor_anggota, :nama, :email, :password)");
-        $query->bindParam(':id_user', $id_user);
+    public function add($nomor_anggota,$nama, $email,$password) {
+        $query = $this->db->prepare("INSERT INTO users (nomor_anggota, nama, email, password) VALUES (:nomor_anggota, :nama, :email, :password)");
+   
         $query->bindParam(':nomor_anggota', $nomor_anggota);
         $query->bindParam(':nama', $nama);
         $query->bindParam(':email', $email);
