@@ -43,7 +43,7 @@ class BooksController {
             'judul' => $_POST['judul'],
             'pengarang' => $_POST['pengarang'],
             'tahun' => $_POST['tahun'],
-            'genre' => $_POST['genre'],
+            'genre' => $_POST['genre']
         ];
 
         $updated = $this->bookModel->update($id_buku, $data);
