@@ -41,12 +41,11 @@ class Loan {
     // Memperbarui data peminjam
     public function update($id_pinjam, $data) {
         $query = "UPDATE loans 
-            SET id_buku = :id_buku, buku_yang_dipinjam = :buku_yang_dipinjam, peminjam = :peminjam, 
+            SET buku_yang_dipinjam = :buku_yang_dipinjam, peminjam = :peminjam, 
                 tanggal_pinjam = :tanggal_pinjam, tanggal_kembali = :tanggal_kembali
             WHERE id_pinjam = :id_pinjam";
         $stmt = $this->db->prepare($query);
         $stmt->bindParam(':id_pinjam', $id_pinjam);
-        $stmt->bindParam(':id_buku', $data['id_buku']);
         $stmt->bindParam(':buku_yang_dipinjam', $data['buku_yang_dipinjam']);
         $stmt->bindParam(':peminjam', $data['peminjam']);
         $stmt->bindParam(':tanggal_pinjam', $data['tanggal_pinjam']);
@@ -62,9 +61,5 @@ class Loan {
         $stmt->bindParam(':id_pinjam', $id_pinjam);
         return $stmt->execute();
 
-        $query = "DELETE FROM books WHERE id_buku = :id_buku";
-        $stmt = $this->db->prepare($query);
-        $stmt->bindParam(':id_buku', $id_pinjam);
-        return $stmt->execute();
     }
 }

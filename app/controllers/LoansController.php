@@ -40,7 +40,6 @@ class LoanController {
     // Memproses upate data
     public function update($id_pinjam) {
         $data = [
-            'id_buku' => $_POST['id_buku'],
             'buku_yang_dipinjam' => $_POST['buku_yang_dipinjam'],
             'peminjam' => $_POST['peminjam'],
             'tanggal_pinjam' => $_POST['tanggal_pinjam'],

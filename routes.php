@@ -3,25 +3,25 @@
 
 require_once 'app/controllers/LoansController.php';
 
-$controller = new LoanController();
+$LoansController = new LoanController();
 $url = $_SERVER['REQUEST_URI'];
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 
 if ($url == '/loans/index' || $url == '/') {
-    $controller->index();
+    $LoansController->index();
 } elseif ($url == '/loans/create' && $requestMethod == 'GET') {
-    $controller->create();
+    $LoansController->create();
 } elseif ($url == '/loans/store' && $requestMethod == 'POST') {
-    $controller->store();
+    $LoansController->store();
 } elseif (preg_match('/\/loans\/edit\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
-    $userId = $matches[1];
-    $controller->edit($userId);
+    $loanId = $matches[1];
+    $LoansController->edit($loanId);
 } elseif (preg_match('/\/loans\/update\/(\d+)/', $url, $matches) && $requestMethod == 'POST') {
-    $userId = $matches[1];
-    $controller->update($userId, $_POST);
+    $loanId = $matches[1];
+    $LoansController->update($loanId, $_POST);
 } elseif (preg_match('/\/loans\/delete\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
-    $userId = $matches[1];
-    $controller->delete($userId);
+    $loanId = $matches[1];
+    $LoansController->delete($Id);
 } else {
     http_response_code(404);
     echo "404 Not Found";
