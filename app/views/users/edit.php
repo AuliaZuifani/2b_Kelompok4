@@ -28,7 +28,7 @@
             </tr>
         </table>
         <div class="text-center">
-            <button type="submit" class="btn btn-warning btn-sm">Update</button>
+            <button type="submit" class="btn btn-warning btn-sm">Simpan</button>
         </div>
 
         <div class="text-center mt-3">
