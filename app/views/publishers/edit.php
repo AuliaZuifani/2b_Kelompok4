@@ -28,7 +28,3 @@
 
 </div>
 <?php require_once '../public/footer.php'; ?>
-
-
-
-

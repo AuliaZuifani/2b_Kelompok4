@@ -2,7 +2,7 @@
 <?php require_once '../public/header.php'; ?>
 <?php require_once '../public/navbar.php'; ?>
 <div class="container mt-5">
-<h2 class="text-center mb-4">Tambah Penerbit Baru</h2>
+<h2>Tambah Penerbit Baru</h2>
 <form action="/publiser/store" method="POST">
 <table class="table table-bordered" style="max-width: 600px; margin: 0 auto;">
             <tr>
