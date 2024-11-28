@@ -6,9 +6,6 @@ require_once 'app/controllers/UsersController.php';
 
 
 $Usercontroller = new UsersController();
-$url = $_SERVER['REQUEST_URI'];
-$requestMethod = $_SERVER['REQUEST_METHOD'];
-$Usercontroller = new UsersController();
 
 $url = $_SERVER['REQUEST_URI'];
 $requestMethod = $_SERVER['REQUEST_METHOD'];
