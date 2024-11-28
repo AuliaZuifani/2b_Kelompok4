@@ -9,7 +9,7 @@
 
 <body>
     <h2>Sistem Pengelolaan Perpustakaan Digital</h2>
-    <a href="/users/create" class="btn-user">Tambah Data User</a>
+    <a href="/users/create" class="btn-user">Tambah Data Users</a>
 
     <ul>
 

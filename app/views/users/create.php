@@ -10,7 +10,7 @@
 
             <tr>
                 
-               <td> <label for="nomor_anggota">No.Anggota:</label></td>
+               <td> <label for="nomor_anggota">Nomor Anggota:</label></td>
                 <td><input type="text" name="nomor_anggota" id="nomor_anggota" class="form-control form-control-sm" required><br></td>
             </tr>
 

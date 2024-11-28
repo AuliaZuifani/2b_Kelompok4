@@ -9,7 +9,7 @@
         <table class="table table-bordered" style="max-width: 600px; margin: 0 auto;">
 
             <tr>
-                <td><label for="nomor_anggota">No.Anggota:</label></td>
+                <td><label for="nomor_anggota">Nomor Anggota:</label></td>
                 <td><input type="text" name="nomor_anggota" class="form-control form-control-sm" value="<?php echo $user['nomor_anggota'] ?>" required></td>
             </tr>
             <tr>
