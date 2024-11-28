@@ -15,7 +15,7 @@ class PubliserController {
     }
 
     public function create() {
-        require_once '../app/views/publiser/publiser/create.php';
+        require_once '../app/views/publishers/create.php';
     }
 
     public function store() {
